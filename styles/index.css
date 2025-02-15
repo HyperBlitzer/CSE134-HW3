@@ -1,0 +1,89 @@
+:root {
+    --custom-font: "Permanent Marker", serif;
+    --primary-color: rgb(84, 117, 94);
+    --header-color: rgb(150, 171, 156);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}    
+
+header {
+    background-color: color(display-p3 0 0.325 0.407 / 1);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1 {
+    font-family: var(--custom-font, Verdana, sans-serif);
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    color: var(--header-color);
+}
+
+header img {
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+nav a {
+    color: var(--header-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+header h1, header img {
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+header nav {
+    animation: slideUp 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
