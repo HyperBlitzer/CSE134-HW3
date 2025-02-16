@@ -103,38 +103,99 @@ hr {
     padding-bottom: 0%;
 }
 
+section hr, #port-top {
+    border: none;
+    border-top: 2px solid rgb(135, 149, 156);
+    height: 2px;
+    margin: 20px 0;
+}
+
 #resume {
     text-align: center;
 }
 
-quadcopter-section, animation-section, lifesaver-section, watering-section {
-    align-items: flex-start;
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+#lifesaver-title {grid-area: 1 / 1 / 2 / 3;}
+#lifesaver-content {grid-area: 2 / 1 / 3 / 2;}
+#lifesaver-image {grid-area: 2 / 2 / 3 / 3;}
+#lifesaver-bottom {grid-area: 3 / 1 / 4 / 3;}
+
+#animation-title {grid-area: 4 / 1 / 5 / 3;}
+#animation-content {grid-area: 5 / 2 / 6 / 3;}
+#animation-image {grid-area: 5 / 1 / 6 / 2;}
+#animation-bottom {grid-area: 6 / 1 / 7 / 3;}
+
+#quadcopter-title {grid-area: 7 / 1 / 8 / 3;}
+#quadcopter-content {grid-area: 8 / 1 / 9 / 2;}
+#quadcopter-image {grid-area: 8 / 2 / 9 / 3;}
+#quadcopter-bottom {grid-area: 9 / 1 / 10 / 3;}
+
+#watering-title { grid-area: 10 / 1 / 11 / 3; }
+#watering-content { grid-area: 11 / 2 / 12 / 3; }
+#watering-image { grid-area: 11 / 1 / 12 / 2; }
+
+section h3 {
+    text-align: center;
+}
+
+/*
+lifesaver-section, animation-section, quadcopter-section, watering-section {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 18rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    text-align: center;
 }
 
 animation-section, watering-section {
     flex-direction: row-reverse;
 }
 
-section p {
-    padding-left: 10%;
-    padding-right: 10%;
+lifesaver-section, quadcopter-section {
+    flex-direction: row;
 }
 
+animation-section img, watering-section img {
+    margin-left: 10rem;
+}
+
+lifesaver-section img, quadcopter-section img {
+    margin-right: 10rem;
+}
+
+lifesaver-section p, quadcopter-section p {
+    padding-left: 20%;
+    margin-right: 10%;
+}
+
+animation-section p, watering-section p {
+    padding-right: 20%;
+    margin-left: 10%;
+}
+
+*/
+
 section img {
-    height: 40%;
-    transition: all .5s;
-    width: 40%;
+    justify-self: center;
+    width: 70%;
+}
+
+.project-content {
+    line-height: 1.5;
 }
 
 my-socials {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+my-socials a {
+    margin-bottom: 15px;
 }
 
 @keyframes slideUp {
