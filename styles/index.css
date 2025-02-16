@@ -31,12 +31,37 @@ header > h1 {
     color: var(--header-color);
 }
 
-header img {
+image-container {
+    position: relative;
+    width: 175px;
+    height: 175px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+image-container img {
+    position: absolute;
     border-radius: 50%;
     width: 10rem;
     height: 10rem;
     object-fit: cover;
+    transition: opacity 1s ease-in-out;
 }
+
+#otherpic {
+    opacity: 0;
+}
+
+image-container:hover #otherpic {
+    opacity: 1;
+}
+
+image-container:hover #mepic {
+    opacity: 0;
+}
+
 
 nav {
     display: flex;
@@ -105,7 +130,8 @@ hr {
 
 section hr, #port-top {
     border: none;
-    border-top: 2px solid rgb(135, 149, 156);
+    border-top: 2px solid;
+    color: color-mix(in srgb, rgb(112, 147, 207), rgb(90, 87, 87));
     height: 2px;
     margin: 20px 0;
 }
@@ -141,43 +167,9 @@ section {
 
 section h3 {
     text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
 }
-
-/*
-lifesaver-section, animation-section, quadcopter-section, watering-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-animation-section, watering-section {
-    flex-direction: row-reverse;
-}
-
-lifesaver-section, quadcopter-section {
-    flex-direction: row;
-}
-
-animation-section img, watering-section img {
-    margin-left: 10rem;
-}
-
-lifesaver-section img, quadcopter-section img {
-    margin-right: 10rem;
-}
-
-lifesaver-section p, quadcopter-section p {
-    padding-left: 20%;
-    margin-right: 10%;
-}
-
-animation-section p, watering-section p {
-    padding-right: 20%;
-    margin-left: 10%;
-}
-
-*/
 
 section img {
     justify-self: center;
@@ -186,6 +178,18 @@ section img {
 
 .project-content {
     line-height: 1.5;
+}
+
+h2:has(+ hr) {
+    font-family:'Segoe UI', Tahoma;
+}
+
+#lifesaver-content, #quadcopter-content {
+    padding-left: 15%;
+}
+
+#animation-content, #watering-content {
+    padding-right: 15%;
 }
 
 my-socials {
@@ -206,5 +210,59 @@ my-socials a {
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@media (max-width: 620px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+
+    #about-section {
+        border: 0;
+        margin: 0;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    section h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    #lifesaver-content, #quadcopter-content, #animation-content, #watering-content {
+        margin-bottom: 3%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #lifesaver-title {grid-area: auto;}
+    #lifesaver-content {grid-area: auto;}
+    #lifesaver-image {grid-area: auto;}
+    #lifesaver-bottom {grid-area: auto;}
+
+    #animation-title {grid-area: auto;}
+    #animation-content {grid-area: auto;}
+    #animation-image {grid-area: auto;}
+    #animation-bottom {grid-area: auto;}
+
+    #quadcopter-title {grid-area: auto;}
+    #quadcopter-content {grid-area: auto;}
+    #quadcopter-image {grid-area: auto;}
+    #quadcopter-bottom {grid-area: auto;}
+
+    #watering-title {grid-area: auto;}
+    #watering-content {grid-area: auto;}
+    #watering-image {grid-area: auto;}
+}
+
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 2rem; 
+    }
+
+    #about-section {
+        margin: 0;
     }
 }
